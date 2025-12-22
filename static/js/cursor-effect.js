@@ -46,12 +46,12 @@ const cursorEffect = (p) => {
   };
 
   // iPhone用タッチイベント
-  p.touchMoved = () => {
-    if (stars.length < MAX_STARS) {
-      stars.push(new Star(p, p.touchX, p.touchY));
-    }
-    return false;
-  };
+  // p.touchMoved = () => {
+  //   if (stars.length < MAX_STARS) {
+  //     stars.push(new Star(p, p.touchX, p.touchY));
+  //   }
+  //   return false;
+  // };
 
   // 星クラス
   class Star {
