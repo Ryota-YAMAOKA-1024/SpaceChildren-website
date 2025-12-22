@@ -74,13 +74,15 @@ const cursorEffect = (p) => {
     display() {
       this.p.push();
       this.p.noStroke();
-      this.p.fill(5, 52, 92, this.alpha); // #05345c
+      // this.p.fill(5, 52, 92, this.alpha); // #05345c
+      this.p.fill(255, 248, 231, this.alpha);
 
       // 星を描画（小さな円）
       this.p.ellipse(this.x, this.y, this.size);
 
       // 尾を描画（流れ星効果）
-      this.p.stroke(5, 52, 92, this.alpha * 0.5);
+      // this.p.stroke(5, 52, 92, this.alpha * 0.5);
+      this.p.stroke(255, 248, 231, this.alpha * 0.5);
       this.p.strokeWeight(1);
       this.p.line(this.x, this.y, this.x - this.vx * 3, this.y - this.vy * 3);
 

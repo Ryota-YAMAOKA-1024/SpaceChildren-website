@@ -1,7 +1,9 @@
 /* Custom Styles */
 body {
-  background-color: #fff8e7;
-  color: #333;
+  /* background-color: #fff8e7; */
+  background-color: #05345c;
+  /* color: #333; */
+  color: #fff8e7;
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -15,7 +17,7 @@ body {
 
 /* concept color */
 .concept-color {
-  color: #05345c;
+  /* color: #05345c; */
   font-weight: bold;
 }
 
@@ -50,7 +52,8 @@ nav ul {
 }
 
 nav a {
-  color: #333;
+  /* color: #333; */
+  color: #fff8e7;
   font-size: 20px; /* 文字サイズを変更 */
   padding: 5px 10px;
   border-radius: 4px;
@@ -87,7 +90,8 @@ footer {
   padding-top: 20px;
   border-top: 1px solid #ddd;
   text-align: center;
-  color: #666;
+  /* color: #666; */
+  color: #fff8e7;
   font-size: 0.9rem;
 }
 
@@ -148,7 +152,8 @@ p {
 }
 
 .text-link {
-  color: #0066cc;
+  /* color: #0066cc; */
+  color: #fff8e7;
   text-decoration: underline;
   font-weight: bold;
   padding: 2px 4px;
