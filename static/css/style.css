@@ -13,6 +13,12 @@ body {
     Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* concept color */
+.concept-color {
+  color: #05345c;
+  font-weight: bold;
+}
+
 nav {
   margin-bottom: 40px;
   padding: 20px 0;
