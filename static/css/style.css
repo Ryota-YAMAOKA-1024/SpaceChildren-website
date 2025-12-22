@@ -36,7 +36,7 @@ nav {
 }
 
 .logo {
-  height: 80px;
+  height: 100px;
   width: auto;
   display: block;
 }
@@ -59,6 +59,21 @@ nav a {
 
 nav ul a:hover {
   background-color: rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-link {
+    margin: 0 auto;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
 }
 
 main {
@@ -203,8 +218,9 @@ p {
   }
 
   /* Logo size on mobile */
+
   .logo {
-    height: 70px;
+    height: 130px;
   }
 
   nav {
