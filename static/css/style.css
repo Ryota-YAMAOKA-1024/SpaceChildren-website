@@ -1,0 +1,58 @@
+/* Custom Styles */
+body {
+  background-color: #FFF8E7;
+  color: #333;
+  padding: 20px;
+}
+
+nav {
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
