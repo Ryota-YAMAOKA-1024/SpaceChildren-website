@@ -126,6 +126,19 @@ p {
   }
 }
 
+.text-link {
+  color: #0066cc;
+  text-decoration: underline;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.text-link:hover {
+  background-color: rgba(0, 102, 204, 0.1);
+}
+
 /* Instagram Embed Layout */
 .instagram-embed {
   display: grid;
