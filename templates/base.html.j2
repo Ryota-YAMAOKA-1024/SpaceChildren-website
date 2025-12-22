@@ -31,8 +31,12 @@
 
 <body>
     <nav>
+        <!-- Logo -->
+        <a href="{{ url_for('main.index') }}" class="logo-link">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="うちゅうのこども出版" class="logo">
+        </a>
+
         <ul class="font-English">
-            <li><a href="{{ url_for('main.index') }}">Home</a></li>
             <li><a href="{{ url_for('main.about') }}">About</a></li>
             <li><a href="{{ url_for('main.members') }}">Members</a></li>
             <li><a href="{{ url_for('main.works') }}">Works</a></li>

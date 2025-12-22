@@ -17,22 +17,41 @@ nav {
   margin-bottom: 40px;
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Logo styles */
+.logo-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  display: block;
 }
 
 nav ul {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
   color: #333;
+  font-size: 20px; /* 文字サイズを変更 */
   padding: 5px 10px;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
 
-nav a:hover {
+nav ul a:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -106,5 +125,14 @@ p {
     max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 auto !important;
+  }
+
+  /* Logo size on mobile */
+  .logo {
+    height: 40px;
+  }
+
+  nav {
+    gap: 15px;
   }
 }
