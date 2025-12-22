@@ -146,6 +146,16 @@ p {
   margin-top: 30px;
 }
 
+.instagram-post {
+  height: 700px; /* 各投稿の枠の高さ */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #ddd;
+  margin-bottom: 20px; /* 投稿間のスペース */
+  padding: 10px;
+}
+
 /* PC: 3 columns */
 @media (min-width: 1024px) {
   .instagram-embed {
@@ -180,6 +190,10 @@ p {
     max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 auto !important;
+  }
+
+  .instagram-post {
+    height: 500px; /* モバイル用に高さを調整 */
   }
 
   /* Logo size on mobile */
