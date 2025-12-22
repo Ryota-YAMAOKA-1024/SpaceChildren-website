@@ -71,17 +71,25 @@ footer {
 }
 
 h1 {
+  text-align: center;
   font-size: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 15px;
 }
 
 p {
+  font-size: 1rem;
   margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .greeting {
@@ -95,24 +103,14 @@ p {
 /* Mobile (iPhone) */
 @media (max-width: 767px) {
   h1 {
-    text-align: center;
     max-width: 300px; /* 幅を制限して自動改行 */
     font-size: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
   }
   h2 {
     max-width: 300px; /* 幅を制限して自動改行 */
-    font-size: 1.2rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
   }
   p {
     max-width: 300px; /* 幅を制限して自動改行 */
-    font-size: 1rem;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
