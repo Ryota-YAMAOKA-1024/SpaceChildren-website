@@ -75,6 +75,16 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* Mobile (iPhone) */
+@media (max-width: 767px) {
+  h1 {
+    max-width: 300px; /* 幅を制限して自動改行 */
+    font-size: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
@@ -82,6 +92,18 @@ h2 {
 
 p {
   margin-bottom: 15px;
+}
+
+/* PC: 改行を非表示 */
+.mobile-br {
+  display: none;
+}
+
+/* Mobile: 改行を表示 */
+@media (max-width: 767px) {
+  .mobile-br {
+    display: inline;
+  }
 }
 
 /* Instagram Embed Layout */
