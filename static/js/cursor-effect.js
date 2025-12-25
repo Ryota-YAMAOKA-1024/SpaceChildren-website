@@ -39,11 +39,11 @@ const cursorEffect = (p) => {
   };
 
   // iPhone用タッチイベント
-  p.touchMoved = (event) => {
-    event.preventDefault();
+  p.touchMoved = () => {
     if (stars.length < MAX_STARS) {
       stars.push(new Star(p, p.touchX, p.touchY));
     }
+    // event.preventDefault() を削除
   };
 
   p.touchStarted = () => {
