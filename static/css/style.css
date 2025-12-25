@@ -144,6 +144,11 @@ p {
   display: none;
 }
 
+.join-us {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 /* Mobile: 改行を表示 */
 @media (max-width: 767px) {
   .mobile-br {

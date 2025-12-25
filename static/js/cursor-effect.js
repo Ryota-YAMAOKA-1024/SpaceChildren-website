@@ -1,5 +1,5 @@
 // Cursor Effect with p5.js instance mode
-// 小さな流れ星がカーソルを追いかけるエフェクト
+// 小さな星がカーソルを追いかけるエフェクト
 
 const cursorEffect = (p) => {
   let stars = [];
@@ -38,20 +38,19 @@ const cursorEffect = (p) => {
     }
   };
 
-  p.mouseMoved = () => {
-    // 星の数を制限
+  // iPhone用タッチイベント
+  p.touchMoved = (event) => {
+    event.preventDefault();
     if (stars.length < MAX_STARS) {
-      stars.push(new Star(p, p.mouseX, p.mouseY));
+      stars.push(new Star(p, p.touchX, p.touchY));
     }
   };
 
-  // iPhone用タッチイベント
-  // p.touchMoved = () => {
-  //   if (stars.length < MAX_STARS) {
-  //     stars.push(new Star(p, p.touchX, p.touchY));
-  //   }
-  //   return false;
-  // };
+  p.touchStarted = () => {
+    if (stars.length < MAX_STARS) {
+      stars.push(new Star(p, p.touchX, p.touchY));
+    }
+  };
 
   // 星クラス
   class Star {
@@ -59,34 +58,56 @@ const cursorEffect = (p) => {
       this.p = p;
       this.x = x;
       this.y = y;
-      this.vx = p.random(-0.5, 0.5); // 横方向の速度
-      this.vy = p.random(-1.5, -0.5); // 上方向の速度（流れ星効果）
-      this.alpha = 255; // 不透明度
-      this.size = p.random(2, 4); // サイズ
+      // カーソルの軌跡により近く
+      let angle = p.random(p.TWO_PI);
+      // let speed = p.random(0.05, 0.15); // ← 小さくする
+      let speed = p.random(0.2, 0.5);
+      this.vx = p.cos(angle) * speed;
+      this.vy = p.sin(angle) * speed;
+      this.alpha = 255;
+      this.size = p.random(5, 10); // ← 小さくする
+      this.rotation = p.random(p.TWO_PI);
+      this.rotationSpeed = p.random(-0.05, 0.05);
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      this.alpha -= 4; // ゆっくりフェードアウト
+      this.rotation += this.rotationSpeed;
+      this.alpha -= 6; // ← 大きくする（早く消える）
     }
 
     display() {
       this.p.push();
+      this.p.translate(this.x, this.y);
+      this.p.rotate(this.rotation);
+      this.p.fill(213, 199, 84, this.alpha); // #d5c754(くすみイエロー)
       this.p.noStroke();
-      // this.p.fill(5, 52, 92, this.alpha); // #05345c
-      this.p.fill(255, 248, 231, this.alpha);
 
-      // 星を描画（小さな円）
-      this.p.ellipse(this.x, this.y, this.size);
-
-      // 尾を描画（流れ星効果）
-      // this.p.stroke(5, 52, 92, this.alpha * 0.5);
-      this.p.stroke(255, 248, 231, this.alpha * 0.5);
-      this.p.strokeWeight(1);
-      this.p.line(this.x, this.y, this.x - this.vx * 3, this.y - this.vy * 3);
+      // 星型を描画
+      this.drawStar(0, 0, this.size * 0.5, this.size * 0.25, 5);
 
       this.p.pop();
+    }
+
+    // 星型を描画する関数
+    drawStar(x, y, radius1, radius2, npoints) {
+      let angle = this.p.TWO_PI / npoints;
+      let halfAngle = angle / 2.0;
+      this.p.beginShape();
+      for (
+        let a = -this.p.PI / 2;
+        a < this.p.TWO_PI - this.p.PI / 2;
+        a += angle
+      ) {
+        let sx = x + this.p.cos(a) * radius1;
+        let sy = y + this.p.sin(a) * radius1;
+        this.p.vertex(sx, sy);
+        sx = x + this.p.cos(a + halfAngle) * radius2;
+        sy = y + this.p.sin(a + halfAngle) * radius2;
+        this.p.vertex(sx, sy);
+      }
+      this.p.endShape(this.p.CLOSE);
     }
 
     isDead() {
